@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AssistController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,15 +23,19 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/create', function () {
-    return view('assist.create');
-})->middleware(['auth', 'verified']);
+    return view('edu.create');
+})->middleware(['auth', 'verified'])->name('create');
+//この部分はのちにAssistの結合予定
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('assist',AssistController::class);
+   
 });
-Route::get('reader', 'ReaderController@index');
-Route::post('reader/extract', 'ReaderController@extract');
+
+
+
 
 require __DIR__ . '/auth.php';
