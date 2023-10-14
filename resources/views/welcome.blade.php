@@ -16,10 +16,10 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-            <h1 style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%); font-size: 26px; font-weight: bold; color: black; margin-bottom: 16px;">ようこそ👏採点補助サービスEdu-GPTに</h1>
+        <div class="sm:flex sm:justify-center sm:items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+            <h1 style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%); font-size: 26px; font-weight: bold; color: black; margin-bottom: 16px;">ようこそ👏採点補助サービスEdu-GPTに,,,</h1>
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-center z-10"
-                    style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); border: 2px solid black;">
+                    style="position: absolute; top: 22%; left: 50%; transform: translate(-50%, -50%); border: 2px solid black;">
                     @if (Route::has('login'))
                     @auth
                     <a href="{{ url('/dashboard') }}"
@@ -40,25 +40,31 @@
                 </div>
         </div>
 
-        <div class="max-w-7xl mx-auto p-6">
+        <div class="max-w-10xl mx-auto p-6">
             <div class="mt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                     <div class="scale-125 p-10 bg-mint-500 dark:bg-mint-600 dark:bg-gradient-to-bl from-mint-400 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
-                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 2px solid mint;">
+                        style="position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); border: 2px solid mint;">
                         <div>
                             <h2 style="font-size: 36px; font-weight: bold; color: black; margin-bottom: 16px;">制作物説明概要</h2>
                             <h3 style="font-size: 18px; font-weight: bold; color: black; margin-bottom: 16px;">
-                                教育現場において教師の負担を軽減し、生徒の演習機会を増やすためのシステム</h3>
+                                教育現場において教師の負担を軽減し、生徒の演習機会を増やすためのシステム<br>
+                                このシステムは、生徒の回答を自動的に採点し、さまざまな項目を評価して個別のカスタマイズされた学習を可能にし、コストを削減し、教師の時間を節約し、教育格差を縮小し、学習者のパフォーマンスを評価し向上させるのに役立ちます。</h3>
+                            <h4 style="font-size: 36px; font-weight: bold; color: black; margin-bottom: 16px;">使用方法</h4>
+                            <h5 style="font-size: 18px; font-weight: bold; color: black; margin-bottom: 16px;">
+                                教育現場において教師の負担を軽減し、生徒の演習機会を増やすためのシステム<br>
+                                ユーザーが質問と生徒の回答をシステムに入力すると、システムは自動的に回答を採点し、入力された採点基準に基づいて評価します。その後、生徒にフィードバックを提供し、改善策をサポートし、さらに学習すべき領域についてのフィードバックを提供します。</h5>
+
 
                             <!-- Japanese Button -->
-                            <button
+                            <!-- <button
                                 class="bg-mint-500 hover:bg-mint-700 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-mint-400 border-2 border-blue-500 border-black"
-                                style="font-size: 25px; margin-right: 50px; color: blue;">国語ver.</button>
+                                style="font-size: 25px; margin-right: 50px; color: blue;">国語ver.</button> -->
                             
                             <!-- English Button -->
-                            <button
+                            <!-- <button
                                 class="bg-mint-500 hover:bg-mint-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring focus:ring-mint-400 border-2 border-blue-500 border-black"
-                                style="font-size: 25px; margin-right: 50px; color: blue;">英語ver.</button>
+                                style="font-size: 25px; margin-right: 50px; color: blue;">英語ver.</button> -->
                         </div>
                     </div>
                 </div>
