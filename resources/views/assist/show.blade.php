@@ -11,25 +11,25 @@
         <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800">
           <div class="mb-6">
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Tweet</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">問題</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="question">
                 {{$assist->question}}
               </p>
             </div>
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Description</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">条件</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="criterion">
                 {{$assist->criterion}}
               </p>
             </div>
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Tweet</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">生徒の回答</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="answer">
                 {{$assist->answer}}
               </p>
             </div>
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">Description</p>
+              <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">AIの評価</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="result">
                 {{$assist->result}}
               </p>
