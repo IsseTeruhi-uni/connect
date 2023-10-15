@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Validator;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
@@ -67,14 +67,15 @@ class AssistController extends Controller
         $criterion = $request->input('criterion');
         $answer = $request->input('answer');
         $sentence = "質問内容:{$question}\n採点基準:{$criterion}\n回答内容:{$answer}";
-        $request['result']=$sentence;
+        $chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、日本語で応答してください", $sentence);
+        $request['result']=$chat_response;
         $result=$request->result;
         // ChatGPT API処理
-        //$chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、日本語で応答してください", $sentence);
+        
         $data = $request->merge(['user_id' => Auth::user()->id])->all();
         $result = Assist::create($data);
         $id=$result->id;
-        return redirect()->route('assist.show',compact('id'));
+        return redirect()->route('assist.show',$result->id);
          // sample code 
         // $request->validate([
         //     'sentence' => 'required',
