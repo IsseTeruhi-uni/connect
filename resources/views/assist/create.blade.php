@@ -8,12 +8,15 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="grid grid-cols-2 gap-4 max-w-7xl mx-auto sm:w-11/12 md:w-11/12 lg:w11/12">
+        <div class=" gap-4 max-w-7xl mx-auto sm:w-11/12 md:w-11/12 lg:w11/12"> <!--grid grid-cols-2を削除-->
             <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
                 <form class="mb-6" action="{{ route('assist.store') }}" method="POST"enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col mb-4">
                         <x-input-label for="question" :value="__('問題')" />
+                        <textarea class="rounded resize-none",type=question name="question" id="question":cols="30" rows="8" required
+                            autofocus>{{ old('question') }}</textarea>
+                        <x-input-error :messages="$errors->get('question')" class="mt-2" />
                         <textarea class="rounded resize-none",type=question name="question" id="question":cols="30" rows="8" required
                             autofocus>{{ old('question') }}</textarea>
                         <x-input-error :messages="$errors->get('question')" class="mt-2" />
@@ -34,6 +37,8 @@
                         <x-input-label for="answer" :value="__('生徒の回答')" />
                         <textarea class="rounded resize-none",type=answer name="answer" id="answer": cols="30" rows="8" required
                             autofocus>{{ old('answer') }}</textarea>
+                        <textarea class="rounded resize-none",type=answer name="answer" id="answer": cols="30" rows="8" required
+                            autofocus>{{ old('answer') }}</textarea>
                         <!-- <x-input-error :messages="$errors->get('answer')" class="mt-2" /> -->
                     </div>
                     <div class="flex flex-col items-center">
@@ -43,14 +48,12 @@
                     </div>
                 </form>
             </div>
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <!-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white dark:bg-gray-800 flex flex-col">
-                    <!-- ↓ 採点結果（仮）↓ -->
                     <label class="dark:text-white" for="result">解答の評価や修正点</label>
                     <textarea class="rounded resize-none" name="result" id="result" cols="30" rows="32">{{ old('result') }}</textarea>
-                    <!-- ↑ 採点結果（仮）↑  -->
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </x-app-layout>
