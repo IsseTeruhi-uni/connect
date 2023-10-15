@@ -22,8 +22,12 @@
                         <tbody>
                             @foreach ($assists as $assist)
                                 <tr class="hover:bg-gray-lighter">
-                                    <td>
-                                        <h3>{{ $assist->question }}</h3>
+                                    <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
+                                        <h3 class="text-left text-lg dark:text-gray-200 w-3/4">
+                                            {{ $assist->question }}</h3>
+                                        <p class="text-right text-sm dark:text-gray-200">
+                                            {{ $assist->updated_at }}
+                                        </p>
                                     </td>
                                 </tr>
                             @endforeach
