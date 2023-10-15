@@ -18,11 +18,22 @@ background:
 linear-gradient(to right, #3498db, #8e44ad);
 margin: 0;
 }
+.container { width: 100%; text-align: center; } .content {
+padding: 10px; border: 2px solid mint; text-align: center; max-width: 800px; margin: 0 auto; }
+.content h1 { font-size: 26px; font-weight: bold; color: black; margin-bottom: 16px; } .content p { font-size: 18px;
+font-weight: bold; color: black; margin-bottom: 16px; } @media (max-width: 768px) { .content { padding: 10px; }
+.content h1 { font-size: 20px; } .content p { font-size: 16px; } }
 </style>
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
 <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 w-1/3">
+<div class="container">
+    <div class="content">
+        <h1>Edu-GPT</h1>
+        <p>Team: CONNECT </p>
+    </div>
+</div>
 
 <div>
     <a href="/">
@@ -37,10 +48,12 @@ margin: 0;
     </a>
 </div>
 
-        <div
-            class="w-full sm:max-w-lg mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-            {{ $slot }}
-        </div>
+<div class="w-full sm:max-w-lg mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <div style="background-color: #FFF; padding: 20px; border-radius: 8px;">
+        {{ $slot }}
+    </div>
+</div>
+
     </div>
 </body>
 
