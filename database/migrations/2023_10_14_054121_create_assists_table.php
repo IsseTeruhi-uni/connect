@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('criterion');
             $table->string('answer');
             $table->string('result');
-            $table->string('image');
             $table->timestamps();
         });
     }

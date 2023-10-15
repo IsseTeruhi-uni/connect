@@ -14,8 +14,8 @@
                      @csrf
                     <div class="flex flex-col mb-4">
                         <x-input-label for="question" :value="__('問題')" />
-                        <textarea class="rounded resize-none",type=question name="question" id="question":value="old('question')" cols="30" rows="8" required autofocus></textarea>
-                        <!-- <x-input-error :messages="$errors->get('question')" class="mt-2" /> -->
+                        <textarea class="rounded resize-none",type=question name="question" id="question":cols="30" rows="8" required autofocus>{{old('question')}}</textarea>
+                        <x-input-error :messages="$errors->get('question')" class="mt-2" />
                     </div>
                     <div class="flex flex-col mb-4">
                         <x-input-label for="criterion" :value="__('採点基準')" />
@@ -29,7 +29,7 @@
                     </div>
                     <div class="flex flex-col mb-4">
                         <x-input-label for="answer" :value="__('生徒の回答')" />
-                        <textarea class="rounded resize-none",type=answer name="answer" id="answer":value="old('answer')" cols="30" rows="8" required autofocus></textarea>
+                        <textarea class="rounded resize-none",type=answer name="answer" id="answer": cols="30" rows="8" required autofocus>{{old('answer')}}</textarea>
                         <!-- <x-input-error :messages="$errors->get('answer')" class="mt-2" /> -->
                     </div>
                     <div class="flex flex-col items-center">
@@ -43,7 +43,7 @@
                 <div class="p-6 bg-white dark:bg-gray-800 flex flex-col">
                     <!-- ↓ 採点結果（仮）↓ -->
                     <label class="dark:text-white" for="result">解答の評価や修正点</label>
-                    <textarea class="rounded resize-none" name="result" id="result" cols="30" rows="32"></textarea>
+                    <textarea class="rounded resize-none" name="result" id="result" cols="30" rows="32">{{old('result')}}</textarea>
                     <!-- ↑ 採点結果（仮）↑  -->
                 </div>
             </div>
