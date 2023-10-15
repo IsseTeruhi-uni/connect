@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="grid grid-cols-2 gap-4 max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
+        <div class="grid grid-cols-2 gap-4 max-w-7xl mx-auto sm:w-11/12 md:w-11/12 lg:w11/12">
             <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
                 <form class="mb-6" action="{{ route('assist.store') }}" method="POST"enctype="multipart/form-data">
                      @csrf
