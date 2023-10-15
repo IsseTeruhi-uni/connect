@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Auth;
@@ -15,9 +16,10 @@ class AssistController extends Controller
         $assists=Assist::getAllOrderByCreated_at();
         return response()->view('assist.index',compact('assists'));
     }
-    public function show() 
+    public function show($id) 
     {
-        return response()->view('assist.show');
+        $assist=Assist::find($id);
+        return response()->view('assist.show',compact('assist'));
     }
     public function create() 
     {
@@ -52,7 +54,7 @@ class AssistController extends Controller
            'question'=>'required|max:255',
            'criterion'=>'required|max:255',
               'answer'=>'required|max:255',
-              'result'=>'required|max:255',
+              'result'=>'max:255'
         ]);
         if ($validator->fails()) {
         return redirect()
@@ -60,21 +62,67 @@ class AssistController extends Controller
           ->withInput()
           ->withErrors($validator);
         }
+         // 文章
+        $question = $request->input('question');
+        $criterion = $request->input('criterion');
+        $answer = $request->input('answer');
+        $sentence = "質問内容:{$question}\n採点基準:{$criterion}\n回答内容:{$answer}";
+        $request['result']=$sentence;
+        $result=$request->result;
+        // ChatGPT API処理
+        //$chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、日本語で応答してください", $sentence);
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
+        $result = Assist::create($data);
+        $id=$result->id;
+        return redirect()->route('assist.show',compact('id'));
+         // sample code 
+        // $request->validate([
+        //     'sentence' => 'required',
+        // ]);
 
+        // // 文章
+        // $sentence = $request->input('sentence');
+
+        // // TODO: ChatGPT API処理
+
+        // return view('chat', compact('sentence'));
     }
 
 
-    public function extract(Request $request) {
+    function chat_gpt($system,$user){
+        $url = "https://api.openai.com/v1/chat/completions";
 
-        
+        // APIキー
+        $api_key = env('CHAT_GPT_KEY');
 
-        $image = $client->createImageObject(file_get_contents($request->image));
-        // テストする場合は直接こちらから画像データを読み込んでください。
-//        $image = $client->createImageObject(file_get_contents(public_path('/images/Assist_example.png')));
+        // ヘッダー
+        $headers = array(
+            "Content-Type" => "application/json",
+            "Authorization" => "Bearer $api_key"
+        );
+        // パラメータ
+        $data = array(
+            "model" => "gpt-3.5-turbo",
+            "messages" => [
+                [
+                    "role" => "system",
+                    "content" => $system
+                ],
+                [
+                    "role" => "user",
+                    "content" => $user
+                ]
+            ]
+        );
 
-       
+        $response = Http::withHeaders($headers)->post($url, $data);
 
-       
+        if ($response->json('error')) {
+            // エラー
+            return $response->json('error')['message'];
+        }
+
+        return $response->json('choices')[0]['message']['content'];
     }
 
 }
