@@ -26,7 +26,7 @@
                         </div>
                         <div id="input_plural">
                             <div class="flex">
-                                <input type="text" class="mb-2 w-full rounded-md" name="criterion.1">
+                                <input type="text" class="mb-2 w-full rounded-md" name="criterion[]">
                                 <input
                                     class="items-end px-4 py-2 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs dark:text-gray-800 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
                                     type="button" value="削除" onclick="del(this)">
@@ -66,7 +66,7 @@
 
         var input = document.createElement('INPUT');
         input.classList.add("mb-2", "w-full", "rounded-md");
-        input.setAttribute('name', 'criterion.' + count);
+        input.setAttribute("name", "criterion[]");
         div.appendChild(input);
 
         var input = document.createElement('INPUT');

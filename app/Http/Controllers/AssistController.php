@@ -66,10 +66,15 @@ class AssistController extends Controller
         }
         // 文章
         $question = $request->input('question');
-        $criterion = $request->input('criterion');
+        $criterionlist = $request->input('criterion');
+        $criterion = "";
+        for($i=0;$i<count($criterionlist);$i++){
+            $criterion = "{$criterion}\n [{$i}]:{$criterionlist[$i]}\n";
+        }
         $answer = $request->input('answer');
         $sentence = "質問内容:{$question}\n採点基準:{$criterion}\n回答内容:{$answer}";
-        $chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、日本語で応答してください", $sentence);
+        $chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、点数と添削、修正案を日本語で応答してください。", $sentence);
+        $request['criterion']=$criterion;
         $request['result'] = $chat_response;
         $result = $request->result;
         // ChatGPT API処理
