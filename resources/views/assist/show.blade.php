@@ -19,7 +19,7 @@
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">条件</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="criterion">
-                {{$assist->criterion}}
+                {!!nl2br($assist->criterion)!!}
               </p>
             </div>
             <div class="flex flex-col mb-4">
@@ -31,7 +31,7 @@
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-gray-800 dark:text-gray-200">AIの評価</p>
               <p class="py-2 px-3 text-gray-800 dark:text-gray-200" id="result">
-                {{$assist->result}}
+                {!!nl2br($assist->result)!!}
               </p>
             </div>
             <div class="flex items-center justify-end mt-4">
