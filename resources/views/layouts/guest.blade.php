@@ -27,32 +27,35 @@ font-weight: bold; color: black; margin-bottom: 16px; } @media (max-width: 768px
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 w-1/3">
-<div class="container">
-    <div class="content">
-        <h1>Edu-GPT</h1>
-        <p>Team: CONNECT </p>
-    </div>
-</div>
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 w-1/3">
+        <div class="container">
+            <div class="content">
+                <h1>Edu-GPT</h1>
+                <p>Team: CONNECT </p>
+            </div>
+        </div>
 
-<div>
-    <a href="/">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <!-- Book Cover -->
-            <path d="M8 8V64H56V8H8Z" fill="#3498db" />
+        <div>
+            <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <!-- Book Cover -->
+                    <path d="M8 8V64H56V8H8Z" fill="#3498db" />
 
-            <!-- Book Pages -->
-            <path d="M15.6 8.07272L8 8L8 64H15.6V8.07272Z" fill="white" />
-            <path d="M8 8L15.6 8.07272V64H8V8Z" fill="#8e44ad" />
-        </svg>
-    </a>
-</div>
+                    <!-- Book Pages -->
+                    <path d="M15.6 8.07272L8 8L8 64H15.6V8.07272Z" fill="white" />
+                    <path d="M8 8L15.6 8.07272V64H8V8Z" fill="#8e44ad" />
 
-<div class="w-full sm:max-w-lg mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-    <div style="background-color: #FFF; padding: 20px; border-radius: 8px;">
-        {{ $slot }}
-    </div>
-</div>
+                    <!-- Text -->
+                    <text x="17" y="40" fill="white" font-size="9">Edu-GPT</text>
+                </svg>
+            </a>
+        </div>
+
+        <div class="w-full sm:max-w-lg mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div style="background-color: #FFF; padding: 20px; border-radius: 8px;">
+                {{ $slot }}
+            </div>
+        </div>
 
     </div>
 </body>
