@@ -39,7 +39,7 @@ font-weight: bold; color: black; margin-bottom: 16px; } @media (max-width: 768px
             <a href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
                     <!-- Book Cover -->
-                    <path d="M8 8V64H56V8H8Z" fill="#3498db" />
+                    <path d="M8 8V64H56V8H8Z" fill="#808080" />
 
                     <!-- Book Pages -->
                     <path d="M15.6 8.07272L8 8L8 64H15.6V8.07272Z" fill="white" />

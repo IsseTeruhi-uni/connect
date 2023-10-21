@@ -7,9 +7,9 @@
     .content h1 { font-size: 26px; font-weight: bold; color: black; margin-bottom: 16px; } .content p { font-size: 18px;
     font-weight: bold; color: black; margin-bottom: 16px; } @media (max-width: 768px) { .content { padding: 10px; }
     .content h1 { font-size: 20px; } .content p { font-size: 16px; } } .login-box { position: absolute; top: 95%; left:
-    50%; transform: translate(-50%, -50%); width: 300px; height: 50px; background: #FFC0CB; /* pink */ box-shadow: 0px
-    4px 6px rgba(0, 0, 0, 0.1); border: 2px solid #FF69B4; /* pink */ border-radius: 12px; color: #fff; } .login-box a
-    { font-size: 20px; background-color: #FF69B4; /* pink */ padding: 10px 20px; border-radius: 8px; } </style>
+    50%; transform: translate(-50%, -50%); width: 300px; height: 50px; background: #3498db; /* blue */ box-shadow: 0px
+    4px 6px rgba(0, 0, 0, 0.1); border: 2px solid #8e44ad; /* blue */ border-radius: 12px; color: #fff; } .login-box a
+    { font-size: 20px; background-color: #FF69B4; /* blue */ padding: 10px 20px; border-radius: 8px; } </style>
     </head>
 
     <body>
