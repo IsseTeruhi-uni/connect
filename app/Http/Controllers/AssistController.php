@@ -55,6 +55,7 @@ class AssistController extends Controller
         $validator = Validator::make($request->all(), [
             'question' => 'required|max:255',
             'criterion' => 'required|max:255',
+            'name' => 'required|min:2|max:255',
             'answer' => 'required|max:255',
             'result' => 'max:255'
         ]);
@@ -68,13 +69,13 @@ class AssistController extends Controller
         $question = $request->input('question');
         $criterionlist = $request->input('criterion');
         $criterion = "";
-        for($i=0;$i<count($criterionlist);$i++){
+        for ($i = 0; $i < count($criterionlist); $i++) {
             $criterion = "{$criterion}\n [{$i}]:{$criterionlist[$i]}\n";
         }
         $answer = $request->input('answer');
         $sentence = "質問内容:{$question}\n採点基準:{$criterion}\n回答内容:{$answer}";
         $chat_response = $this->chat_gpt("質問内容、採点基準、回答内容が提供されます。採点と添削を行い、点数と添削、修正案を日本語で応答してください。", $sentence);
-        $request['criterion']=$criterion;
+        $request['criterion'] = $criterion;
         $request['result'] = $chat_response;
         $result = $request->result;
         // ChatGPT API処理
