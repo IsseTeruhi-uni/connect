@@ -25,8 +25,13 @@
                                 class="px-4 py-2 border border-transparet font-semibold text-xs rounded-md dark:bg-gray-200">採点基準の追加</a>
                         </div>
                         <div id="input_plural">
-                            
                         </div>
+                    </div>
+                    <div class="flex flex-col mb-4">
+                        <x-input-label for="name" :value="__('生徒の名前')" />
+                        <x-text-input id="name" type="text" name="name" :value="old('name')" required
+                            autofocus />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <div class="flex flex-col mb-4">
                         <x-input-label for="answer" :value="__('生徒の回答')" />

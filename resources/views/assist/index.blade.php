@@ -1,7 +1,7 @@
 <!-- resources/views/assist/index.blade.php -->
 
 <x-app-layout>
-    <x-slot name="header" >
+    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-900">
             {{ __('Assist Index') }}
         </h2>
@@ -27,7 +27,6 @@
                                             <h3 class="text-left text-lg dark:text-gray-900 w-3/4">
                                                 {{ $assist->question }}</h3>
                                         </a>
-                                        <p class="text-right text-sm dark:text-gray-900">
                                             {{ $assist->updated_at }}
                                         </p>
                                     </td>
