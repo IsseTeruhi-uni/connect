@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->string('criterion');
+            $table->string('name');
             $table->string('answer');
             $table->string('result');
             $table->timestamps();
