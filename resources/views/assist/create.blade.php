@@ -9,7 +9,7 @@
 
     <div class="py-12" style="background:linear-gradient(to right, #3498db, #8e44ad); margin: 0;">
         <div class="max-w-7xl mx-auto sm:w-11/12 md:w-11/12 lg:w11/12"> <!--grid grid-cols-2を削除-->
-            <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
+            <div class="p-6 bg-white border-b border-gray-200 dark:border-gray-800 ">
                 <form class="mb-6" action="{{ route('assist.store') }}" method="POST"enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col mb-4">
