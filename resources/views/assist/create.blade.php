@@ -3,7 +3,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-900 leading-tight dark:text-gray-900 ">
-            {{ __('Assist Create') }}
+            {{ __('Create') }}
         </h2>
     </x-slot>
 
