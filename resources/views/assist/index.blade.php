@@ -26,7 +26,7 @@
                                         <a href="{{ route('assist.show', $assist->id) }}">
                                             <h3 class="text-left text-lg dark:text-gray-900 w-3/4">
                                                 {{ $assist->question }}</h3>
-                                            <p class="text-right text-sm dark:text-gray-200">
+                                            <p class="text-right text-sm dark:text-gray-600">
                                                 {{ $assist->name }}の解答
                                             </p>
                                         </a>
