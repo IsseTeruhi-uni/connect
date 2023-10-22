@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('assists', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
+            $table->longText('question');
             $table->string('criterion');
             $table->string('name');
-            $table->string('answer');
-            $table->string('result');
+            $table->longText('answer');
+            $table->longText('result');
             $table->timestamps();
         });
     }
