@@ -40,7 +40,9 @@ class ScanController extends Controller
             $client = new ImageAnnotatorClient([
                 'credentials' => config_path('vision_api_key.json')]
             );
-            $response = $client->textDetection(file_get_contents('storage/test.png'));
+            $path = $request->file('image')->store('ocr-prc', 'public');
+
+            $response = $client->textDetection(file_get_contents('storage/'.$path));
             $annotations = $response->getTextAnnotations();
             $description = str_replace('"""', '', $annotations[0]->getDescription());
             if (!is_null($response->getError())) {
