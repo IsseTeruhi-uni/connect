@@ -45,12 +45,6 @@
                     </div>
                 </form>
             </div>
-            <!-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white dark:bg-gray-800 flex flex-col">
-                    <label class="dark:text-white" for="result">解答の評価や修正点</label>
-                    <textarea class="rounded resize-none" name="result" id="result" cols="30" rows="32">{{ old('result') }}</textarea>
-                </div>
-            </div> -->
         </div>
     </div>
 </x-app-layout>
